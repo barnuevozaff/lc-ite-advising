@@ -1,0 +1,723 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-04T20:33:42.653909+00:00",
+  "title": "Design System: Laguna College ITE Academic Advising",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Cool Paper",
+        "canonical": "#eef0f4",
+        "dark": "#0d1120",
+        "tonalRamp": [
+          "#0a0b0e",
+          "#252629",
+          "#434548",
+          "#646669",
+          "#87898d",
+          "#acaeb2",
+          "#cfd1d5",
+          "#eceef2"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Ledger White",
+        "canonical": "#ffffff",
+        "dark": "#141a2b",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "surface-2": {
+        "role": "neutral",
+        "displayName": "Margin Grey",
+        "canonical": "#f6f7f9",
+        "dark": "#181f32",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#262628",
+          "#444547",
+          "#656668",
+          "#88898b",
+          "#adaeb0",
+          "#d0d1d3",
+          "#edeef0"
+        ]
+      },
+      "sunken": {
+        "role": "neutral",
+        "displayName": "Sunken Grey",
+        "canonical": "#e6e9ef",
+        "dark": "#0f1424",
+        "tonalRamp": [
+          "#090b0f",
+          "#24262b",
+          "#43454a",
+          "#63666b",
+          "#86898f",
+          "#abaeb4",
+          "#ced1d7",
+          "#ebeef5"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#dde1e8",
+        "dark": "#262e45",
+        "tonalRamp": [
+          "#090b10",
+          "#24272c",
+          "#42454b",
+          "#63666c",
+          "#868990",
+          "#aaaeb5",
+          "#cdd1d8",
+          "#ebeff6"
+        ]
+      },
+      "line-strong": {
+        "role": "neutral",
+        "displayName": "Strong Rule",
+        "canonical": "#c5cbd6",
+        "dark": "#364061",
+        "tonalRamp": [
+          "#080b12",
+          "#22272f",
+          "#40454e",
+          "#616670",
+          "#848994",
+          "#a8aeb9",
+          "#cbd1dc",
+          "#e9effa"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ledger Ink",
+        "canonical": "#121729",
+        "dark": "#e7e9f1",
+        "tonalRamp": [
+          "#060a1a",
+          "#202539",
+          "#3e4459",
+          "#5e657c",
+          "#8188a0",
+          "#a5adc6",
+          "#c8d0ea",
+          "#e5eeff"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink Second",
+        "canonical": "#434a60",
+        "dark": "#b4bacb",
+        "tonalRamp": [
+          "#060a1b",
+          "#1f2539",
+          "#3d445a",
+          "#5e657c",
+          "#8088a1",
+          "#a5adc7",
+          "#c7d0eb",
+          "#e5eeff"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Ink Third",
+        "canonical": "#636a80",
+        "dark": "#8f96ab",
+        "tonalRamp": [
+          "#060a1a",
+          "#202538",
+          "#3e4459",
+          "#5e657b",
+          "#81889f",
+          "#a5adc5",
+          "#c8d0e9",
+          "#e5eeff"
+        ]
+      },
+      "seal": {
+        "role": "primary",
+        "displayName": "Laguna Seal Blue",
+        "canonical": "#233c94",
+        "dark": "#4562d6",
+        "tonalRamp": [
+          "#020039",
+          "#0a156d",
+          "#223b93",
+          "#405fba",
+          "#6183e2",
+          "#84a9ff",
+          "#b3cfff",
+          "#dceeff"
+        ]
+      },
+      "seal-hover": {
+        "role": "primary",
+        "displayName": "Seal Ink Deep",
+        "canonical": "#1b2f78",
+        "dark": "#5673e3",
+        "tonalRamp": [
+          "#020039",
+          "#0d1b63",
+          "#273e88",
+          "#4661ae",
+          "#6785d6",
+          "#8aabff",
+          "#b3cfff",
+          "#dbeeff"
+        ]
+      },
+      "seal-text": {
+        "role": "primary",
+        "displayName": "Seal Ink (text and stamp)",
+        "canonical": "#233c94",
+        "dark": "#9fb3ff",
+        "tonalRamp": [
+          "#020039",
+          "#0a156d",
+          "#223b93",
+          "#405fba",
+          "#6183e2",
+          "#84a9ff",
+          "#b3cfff",
+          "#dceeff"
+        ]
+      },
+      "seal-tint": {
+        "role": "primary",
+        "displayName": "Seal Wash",
+        "canonical": "#e9edf9",
+        "dark": "#1c2647",
+        "tonalRamp": [
+          "#090b12",
+          "#23262f",
+          "#42454e",
+          "#626670",
+          "#858994",
+          "#aaaeb9",
+          "#cdd1dc",
+          "#eaeefa"
+        ]
+      },
+      "on-seal": {
+        "role": "primary",
+        "displayName": "On Seal",
+        "canonical": "#ffffff",
+        "dark": "#ffffff",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "focus": {
+        "role": "primary",
+        "displayName": "Focus Blue",
+        "canonical": "#3a5ad6",
+        "dark": "#8ea6ff",
+        "tonalRamp": [
+          "#020038",
+          "#0e0082",
+          "#1d2faa",
+          "#3857d3",
+          "#577dfd",
+          "#83a8ff",
+          "#b4cfff",
+          "#dbeeff"
+        ]
+      },
+      "ok": {
+        "role": "status",
+        "displayName": "Ledger Green",
+        "canonical": "#17734a",
+        "dark": "#5fd39a",
+        "tonalRamp": [
+          "#001202",
+          "#003215",
+          "#00552e",
+          "#1e784f",
+          "#499c71",
+          "#6fc395",
+          "#93e7b7",
+          "#b7ffd7"
+        ]
+      },
+      "ok-tint": {
+        "role": "status",
+        "displayName": "Ledger Green Tint",
+        "canonical": "#e5f3eb",
+        "dark": "#12291f",
+        "tonalRamp": [
+          "#050e09",
+          "#1f2924",
+          "#3d4842",
+          "#5d6963",
+          "#808d86",
+          "#a4b2aa",
+          "#c7d5cd",
+          "#e5f3eb"
+        ]
+      },
+      "teal": {
+        "role": "status",
+        "displayName": "Eligible Teal",
+        "canonical": "#0b6b6f",
+        "dark": "#5fd0cf",
+        "tonalRamp": [
+          "#001013",
+          "#002f32",
+          "#005155",
+          "#1b7478",
+          "#46989c",
+          "#6dbdc1",
+          "#91e1e5",
+          "#aeffff"
+        ]
+      },
+      "teal-tint": {
+        "role": "status",
+        "displayName": "Eligible Teal Tint",
+        "canonical": "#e0f2f1",
+        "dark": "#0f2a2c",
+        "tonalRamp": [
+          "#030e0d",
+          "#1b2929",
+          "#3a4848",
+          "#5a6a69",
+          "#7d8d8c",
+          "#a1b2b1",
+          "#c4d5d4",
+          "#e1f3f2"
+        ]
+      },
+      "bad": {
+        "role": "status",
+        "displayName": "Retake Red",
+        "canonical": "#b3261e",
+        "dark": "#ff8a80",
+        "tonalRamp": [
+          "#220000",
+          "#530000",
+          "#8b0000",
+          "#b62921",
+          "#e05446",
+          "#ff8170",
+          "#ffbbb0",
+          "#ffe6e0"
+        ]
+      },
+      "bad-tint": {
+        "role": "status",
+        "displayName": "Retake Red Tint",
+        "canonical": "#fbeae8",
+        "dark": "#33171a",
+        "tonalRamp": [
+          "#120807",
+          "#2f2322",
+          "#4f4140",
+          "#716261",
+          "#948583",
+          "#baaaa8",
+          "#ddcdcb",
+          "#fbeae8"
+        ]
+      },
+      "warn": {
+        "role": "status",
+        "displayName": "Prerequisite Amber",
+        "canonical": "#8f5300",
+        "dark": "#f0b45a",
+        "tonalRamp": [
+          "#220000",
+          "#491100",
+          "#6d3400",
+          "#925605",
+          "#b87937",
+          "#e09e5d",
+          "#ffc180",
+          "#ffe8ca"
+        ]
+      },
+      "warn-tint": {
+        "role": "status",
+        "displayName": "Prerequisite Amber Tint",
+        "canonical": "#fbf0dc",
+        "dark": "#2d2213",
+        "tonalRamp": [
+          "#110a01",
+          "#2d2516",
+          "#4d4433",
+          "#6e6554",
+          "#928876",
+          "#b7ad9a",
+          "#dad0bc",
+          "#f8edd9"
+        ]
+      },
+      "act": {
+        "role": "status",
+        "displayName": "Action Orange",
+        "canonical": "#b2440b",
+        "dark": "#ff9e66",
+        "tonalRamp": [
+          "#220000",
+          "#530000",
+          "#831300",
+          "#ab3d00",
+          "#d46334",
+          "#fe895a",
+          "#ffbda0",
+          "#ffe6da"
+        ]
+      },
+      "act-tint": {
+        "role": "status",
+        "displayName": "Action Orange Tint",
+        "canonical": "#fdece2",
+        "dark": "#34190c",
+        "tonalRamp": [
+          "#130804",
+          "#30231c",
+          "#4f423a",
+          "#71635a",
+          "#95867d",
+          "#baaaa1",
+          "#decdc4",
+          "#fcebe1"
+        ]
+      },
+      "data": {
+        "role": "status",
+        "displayName": "Record Violet",
+        "canonical": "#6a3cb4",
+        "dark": "#c4a3ff",
+        "tonalRamp": [
+          "#12002d",
+          "#330069",
+          "#521e97",
+          "#7346bf",
+          "#966ce7",
+          "#ba92ff",
+          "#d8c1ff",
+          "#f3e5ff"
+        ]
+      },
+      "data-tint": {
+        "role": "status",
+        "displayName": "Record Violet Tint",
+        "canonical": "#f1ebfa",
+        "dark": "#251a3a",
+        "tonalRamp": [
+          "#0d0912",
+          "#29242f",
+          "#47424e",
+          "#696370",
+          "#8c8694",
+          "#b1abb9",
+          "#d4cedc",
+          "#f1ebfa"
+        ]
+      },
+      "mute": {
+        "role": "status",
+        "displayName": "Quiet Slate",
+        "canonical": "#5b6276",
+        "dark": "#a3a9bb",
+        "tonalRamp": [
+          "#060a19",
+          "#202637",
+          "#3e4457",
+          "#5e667a",
+          "#81899e",
+          "#a6adc4",
+          "#c8d1e8",
+          "#e6eeff"
+        ]
+      },
+      "mute-tint": {
+        "role": "status",
+        "displayName": "Quiet Slate Tint",
+        "canonical": "#eceef2",
+        "dark": "#1d2337",
+        "tonalRamp": [
+          "#0a0b0e",
+          "#252629",
+          "#434548",
+          "#646669",
+          "#87898d",
+          "#acaeb2",
+          "#cfd1d5",
+          "#eceef2"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Sign-in statement only; 2rem on phones, 2.75rem from md."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Subject of the screen (student name, record); 1.75rem on phones, 2rem from md."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Panel and sheet headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default reading text, 70ch max for descriptions."
+      },
+      "body-sm": {
+        "displayName": "Body small",
+        "purpose": "Ledger cells, nav, secondary copy."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Status tags, column headers (500), metadata, provenance."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "All comparable numbers: units, grades, counts, student numbers."
+      },
+      "code": {
+        "displayName": "Subject code",
+        "purpose": "Subject codes, nowrap."
+      },
+      "stamp-word": {
+        "displayName": "Stamp word",
+        "purpose": "Uppercase decision word in the dean stamp only."
+      },
+      "stamp-meta": {
+        "displayName": "Stamp meta",
+        "purpose": "Office and date lines inside the stamp."
+      }
+    },
+    "shadows": [
+      {
+        "name": "overlay",
+        "value": "0 24px 48px -12px rgb(18 23 41 / 0.22), 0 2px 6px rgb(18 23 41 / 0.06)",
+        "dark": "0 24px 48px -12px rgb(0 0 0 / 0.6), 0 0 0 1px rgb(255 255 255 / 0.04)",
+        "purpose": "Sheets and navigation drawer only."
+      },
+      {
+        "name": "focus-halo",
+        "value": "0 0 0 3px color-mix(in oklab, var(--focus) 22%, transparent)",
+        "purpose": "Input focus."
+      },
+      {
+        "name": "active-nav-ring",
+        "value": "0 0 0 1px var(--line)",
+        "purpose": "Hairline ring on the active sidebar item (not a drop shadow)."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Button press (140ms), stamp press-in (320ms), content enter (220ms, 6px rise)."
+      },
+      {
+        "name": "ease-drawer",
+        "value": "cubic-bezier(0.32, 0.72, 0, 1)",
+        "purpose": "Sheet and drawer slide (280ms); backdrop fades 220ms."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animations to 1ms; stamp fades 200ms; sheet cross-fades 160ms; press scale removed",
+        "purpose": "prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ],
+    "focus": {
+      "outline": "2px solid var(--focus)",
+      "offset": "2px",
+      "radius": "4px"
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Seal-blue action: approve, confirm, save. One per decision area.",
+      "html": "<button class=\"ds-btn ds-btn-primary\">Approve load</button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 40px; padding: 0 16px; border-radius: 6px; font-family: \"Geist Variable\", ui-sans-serif, system-ui, sans-serif; font-weight: 550; font-size: 14px; border: 1px solid transparent; transition: transform 140ms cubic-bezier(0.23,1,0.32,1), background-color 160ms ease, border-color 160ms ease, color 160ms ease; cursor: pointer; } .ds-btn:active { transform: scale(0.97); } .ds-btn:focus-visible { outline: 2px solid var(--focus, #3a5ad6); outline-offset: 2px; } .ds-btn-primary { background: var(--seal, #233c94); color: var(--on-seal, #fff); } .ds-btn-primary:hover { background: var(--seal-hover, #1b2f78); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "White bordered companion action.",
+      "html": "<button class=\"ds-btn ds-btn-secondary\">Refer to Registrar</button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 40px; padding: 0 16px; border-radius: 6px; font-family: \"Geist Variable\", ui-sans-serif, system-ui, sans-serif; font-weight: 550; font-size: 14px; border: 1px solid transparent; transition: transform 140ms cubic-bezier(0.23,1,0.32,1), background-color 160ms ease, border-color 160ms ease, color 160ms ease; cursor: pointer; } .ds-btn:active { transform: scale(0.97); } .ds-btn:focus-visible { outline: 2px solid var(--focus, #3a5ad6); outline-offset: 2px; } .ds-btn-secondary { background: var(--surface, #fff); color: var(--ink, #121729); border-color: var(--line-strong, #c5cbd6); } .ds-btn-secondary:hover { background: var(--surface-2, #f6f7f9); border-color: var(--ink-3, #636a80); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Chrome-less shell utility and icon button.",
+      "html": "<button class=\"ds-btn ds-btn-ghost\">Sign out</button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 40px; padding: 0 16px; border-radius: 6px; font-family: \"Geist Variable\", ui-sans-serif, system-ui, sans-serif; font-weight: 550; font-size: 14px; border: 1px solid transparent; transition: transform 140ms cubic-bezier(0.23,1,0.32,1), background-color 160ms ease, border-color 160ms ease, color 160ms ease; cursor: pointer; } .ds-btn:active { transform: scale(0.97); } .ds-btn:focus-visible { outline: 2px solid var(--focus, #3a5ad6); outline-offset: 2px; } .ds-btn-ghost { background: transparent; color: var(--ink-2, #434a60); padding: 0 10px; } .ds-btn-ghost:hover { background: var(--sunken, #e6e9ef); color: var(--ink, #121729); }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "40px field with focus border and halo.",
+      "html": "<label class=\"ds-label\">Student number<input class=\"ds-input\" placeholder=\"2023-00123\"></label>",
+      "css": ".ds-label { display: block; font-family: \"Geist Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 13px; font-weight: 550; color: var(--ink-2, #434a60); } .ds-input { display: block; margin-top: 6px; width: 260px; height: 40px; padding: 0 12px; border-radius: 6px; border: 1px solid var(--line-strong, #c5cbd6); background: var(--surface, #fff); color: var(--ink, #121729); font-family: \"Geist Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 15px; transition: border-color 160ms ease, box-shadow 160ms ease; } .ds-input::placeholder { color: var(--ink-3, #636a80); } .ds-input:focus { outline: none; border-color: var(--focus, #3a5ad6); box-shadow: 0 0 0 3px color-mix(in oklab, var(--focus, #3a5ad6) 22%, transparent); }"
+    },
+    {
+      "name": "Status Tags",
+      "kind": "chip",
+      "refersTo": "status-tag",
+      "description": "Icon + text status; never colour alone.",
+      "html": "<span class=\"ds-tag\" style=\"color:#17734a;background:#e5f3eb\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 256 256\" fill=\"currentColor\"><path d=\"M176.49 95.51a12 12 0 0 1 0 17l-56 56a12 12 0 0 1-17 0l-24-24a12 12 0 1 1 17-17L112 143l47.51-47.52a12 12 0 0 1 16.98.03ZM236 128A108 108 0 1 1 128 20a108.12 108.12 0 0 1 108 108Zm-24 0a84 84 0 1 0-84 84 84.09 84.09 0 0 0 84-84Z\"/></svg>Passed</span> <span class=\"ds-tag\" style=\"color:#8f5300;background:#fbf0dc\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 256 256\" fill=\"currentColor\"><path d=\"M208 76h-32V56a48 48 0 0 0-96 0v20H48a20 20 0 0 0-20 20v112a20 20 0 0 0 20 20h160a20 20 0 0 0 20-20V96a20 20 0 0 0-20-20Zm-104-20a24 24 0 0 1 48 0v20h-48Zm100 148H52V100h152Z\"/></svg>Blocked by prerequisite</span> <span class=\"ds-tag\" style=\"color:#6a3cb4;background:#f1ebfa\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 256 256\" fill=\"currentColor\"><path d=\"M230.14 70.54 185.46 25.85a20 20 0 0 0-28.29 0L33.86 149.17A19.85 19.85 0 0 0 28 163.31V208a20 20 0 0 0 20 20h168a12 12 0 0 0 0-24H125l105.14-105.17a20 20 0 0 0 0-28.29ZM91 204H52v-39l84-84 39 39Zm101-101-39-39 18.34-18.34 39 39Z\"/></svg>Record update needed</span>",
+      "css": ".ds-tag { display: inline-flex; align-items: center; gap: 5px; height: 24px; padding: 0 8px 0 6px; border-radius: 4px; font-family: \"Geist Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 12px; font-weight: 550; line-height: 1; white-space: nowrap; margin: 2px; }"
+    },
+    {
+      "name": "Filter Chips",
+      "kind": "chip",
+      "refersTo": "filter-chip",
+      "description": "Pill filters with mono counts; selection inverts to ink.",
+      "html": "<button class=\"ds-chip ds-chip-on\">All <span class=\"ds-n\">48</span></button> <button class=\"ds-chip\">Eligible <span class=\"ds-n\">6</span></button>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; border-radius: 9999px; border: 1px solid var(--line-strong, #c5cbd6); background: transparent; color: var(--ink-2, #434a60); font-family: \"Geist Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: border-color 160ms, color 160ms; } .ds-chip:hover { border-color: var(--ink-3, #636a80); color: var(--ink, #121729); } .ds-chip:focus-visible { outline: 2px solid var(--focus, #3a5ad6); outline-offset: 2px; } .ds-chip-on, .ds-chip-on:hover { background: var(--ink, #121729); border-color: var(--ink, #121729); color: var(--paper, #eef0f4); } .ds-n { font-family: \"Geist Mono Variable\", ui-monospace, \"SF Mono\", monospace; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; font-size: 12px; opacity: 0.7; }"
+    },
+    {
+      "name": "Sidebar Navigation",
+      "kind": "nav",
+      "refersTo": "nav-item",
+      "description": "Sidebar items; active is a white item with a hairline ring and seal icon.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-item ds-nav-on\" href=\"#\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 256 256\" fill=\"currentColor\" class=\"ds-ic\"><path d=\"M224 115.55V208a16 16 0 0 1-16 16h-48a16 16 0 0 1-16-16v-48h-32v48a16 16 0 0 1-16 16H48a16 16 0 0 1-16-16v-92.45a16 16 0 0 1 5.17-11.78l80-75.48.11-.11a16 16 0 0 1 21.53 0 1.14 1.14 0 0 0 .11.11l80 75.48a16 16 0 0 1 5.08 11.78Z\"/></svg>My evaluation</a><a class=\"ds-nav-item\" href=\"#\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 256 256\" fill=\"currentColor\"><path d=\"M160 112h48a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16h-48a16 16 0 0 0-16 16v16h-8a24 24 0 0 0-24 24v32H72v-8a16 16 0 0 0-16-16H32a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h24a16 16 0 0 0 16-16v-8h40v32a24 24 0 0 0 24 24h8v16a16 16 0 0 0 16 16h48a16 16 0 0 0 16-16v-48a16 16 0 0 0-16-16h-48a16 16 0 0 0-16 16v16h-8a8 8 0 0 1-8-8V88a8 8 0 0 1 8-8h8v16a16 16 0 0 0 16 16ZM56 144H32v-32h24Zm104 16h48v48h-48Zm0-112h48v48h-48Z\"/></svg>Curriculum progress</a></nav>",
+      "css": ".ds-nav { width: 232px; padding: 12px; background: var(--surface-2, #f6f7f9); } .ds-nav-item { display: flex; align-items: center; gap: 12px; height: 40px; padding: 0 12px; border-radius: 6px; font-family: \"Geist Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 14px; font-weight: 500; color: var(--ink-2, #434a60); text-decoration: none; transition: background-color 150ms, color 150ms; } .ds-nav-item:hover { background: var(--sunken, #e6e9ef); color: var(--ink, #121729); } .ds-nav-item:focus-visible { outline: 2px solid var(--focus, #3a5ad6); outline-offset: 2px; } .ds-nav-on, .ds-nav-on:hover { background: var(--surface, #fff); color: var(--ink, #121729); box-shadow: 0 0 0 1px var(--line, #dde1e8); } .ds-nav-on .ds-ic { color: var(--seal-text, #233c94); }"
+    },
+    {
+      "name": "Ledger Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Hairline panel holding a ruled ledger with mono figures and a double-ruled total.",
+      "html": "<section class=\"ds-panel\"><header class=\"ds-ph\"><h2>Prescribed subject load</h2><p>2nd Semester, AY 2026-2027</p></header><table class=\"ds-ledger\"><thead><tr><th>Code</th><th>Descriptive title</th><th class=\"r\">Units</th></tr></thead><tbody><tr><td class=\"ds-code\">CS 201</td><td>Data Structures and Algorithms</td><td class=\"ds-num r\">3</td></tr><tr><td class=\"ds-code\">CS 203</td><td>Discrete Structures 2</td><td class=\"ds-num r\">3</td></tr><tr><td class=\"ds-code\">GE 105</td><td>Purposive Communication</td><td class=\"ds-num r\">3</td></tr></tbody><tfoot><tr><td colspan=\"2\">3 subjects</td><td class=\"ds-num r\">9</td></tr></tfoot></table></section>",
+      "css": ".ds-panel { width: 520px; background: var(--surface, #fff); border: 1px solid var(--line, #dde1e8); border-radius: 10px; overflow: hidden; font-family: \"Geist Variable\", ui-sans-serif, system-ui, sans-serif; color: var(--ink, #121729); } .ds-ph { padding: 16px 20px; border-bottom: 1px solid var(--line, #dde1e8); } .ds-ph h2 { margin: 0; font-size: 18px; font-weight: 600; letter-spacing: -0.012em; } .ds-ph p { margin: 2px 0 0; font-size: 14px; color: var(--ink-2, #434a60); } .ds-ledger { width: 100%; border-collapse: collapse; font-size: 14px; } .ds-ledger th { text-align: left; font-weight: 500; font-size: 12px; color: var(--ink-3, #636a80); padding: 8px 12px; border-bottom: 1px solid var(--line-strong, #c5cbd6); } .ds-ledger td { padding: 10px 12px; border-bottom: 1px solid var(--line, #dde1e8); vertical-align: baseline; } .ds-ledger th:first-child, .ds-ledger td:first-child { padding-left: 20px; } .ds-ledger th:last-child, .ds-ledger td:last-child { padding-right: 20px; } .ds-ledger tbody tr:last-child td { border-bottom: 0; } .ds-ledger tbody tr { cursor: pointer; transition: background-color 120ms; } .ds-ledger tbody tr:hover td { background: var(--surface-2, #f6f7f9); } .ds-ledger tfoot td { border-top: 3px double var(--line-strong, #c5cbd6); border-bottom: 0; font-weight: 550; } .ds-ledger .r { text-align: right; } .ds-code { font-family: \"Geist Mono Variable\", ui-monospace, \"SF Mono\", monospace; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; font-size: 13px; white-space: nowrap; } .ds-num { font-family: \"Geist Mono Variable\", ui-monospace, \"SF Mono\", monospace; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }"
+    },
+    {
+      "name": "Dean Stamp",
+      "kind": "custom",
+      "refersTo": "stamp",
+      "description": "The only ink in the system: the dean decision, stated once with its date.",
+      "html": "<div class=\"ds-stamp\"><span class=\"ds-sw\">Approved</span><span class=\"ds-sm\">Dean, ITE Department</span><span class=\"ds-sm\">05 Oct 2026</span></div>",
+      "css": ".ds-stamp { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 2px; margin: 16px; padding: 8px 12px 9px; border: 2px solid var(--seal-text, #233c94); outline: 1px solid var(--seal-text, #233c94); outline-offset: 2px; border-radius: 4px; color: var(--seal-text, #233c94); transform: rotate(-2.5deg); animation: ds-stamp-in 320ms cubic-bezier(0.23,1,0.32,1) both; } .ds-sw { font-family: \"Geist Variable\", ui-sans-serif, system-ui, sans-serif; font-weight: 750; font-size: 17px; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1.1; } .ds-sm { font-family: \"Geist Mono Variable\", ui-monospace, monospace; font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.92; } @keyframes ds-stamp-in { 0% { opacity: 0; transform: rotate(-2.5deg) scale(1.18); } 60% { opacity: 1; transform: rotate(-2.5deg) scale(0.985); } 100% { transform: rotate(-2.5deg) scale(1); } }"
+    },
+    {
+      "name": "Margin Note",
+      "kind": "custom",
+      "description": "AI explanation voice: hairline left rule, no panel, with its provenance line.",
+      "html": "<article class=\"ds-note\"><span class=\"ds-src\"><svg width=\"13\" height=\"13\" viewBox=\"0 0 256 256\" fill=\"currentColor\"><path d=\"M216 48H40a16 16 0 0 0-16 16v160a15.85 15.85 0 0 0 9.24 14.5A16.13 16.13 0 0 0 40 240a15.89 15.89 0 0 0 10.25-3.78l.09-.07L83 208h133a16 16 0 0 0 16-16V64a16 16 0 0 0-16-16Zm0 144H80a8 8 0 0 0-5.23 1.95L40 224V64h176ZM88 112a8 8 0 0 1 8-8h64a8 8 0 0 1 0 16H96a8 8 0 0 1-8-8Zm0 32a8 8 0 0 1 8-8h64a8 8 0 1 1 0 16H96a8 8 0 0 1-8-8Z\"/></svg>AI explanation, not an academic decision</span><p>CS 301 is blocked because its prerequisite, CS 201, is recorded as Failed. Once CS 201 is passed, CS 301 becomes eligible in a term it is offered.</p></article>",
+      "css": ".ds-note { max-width: 68ch; border-left: 1px solid var(--line-strong, #c5cbd6); padding-left: 16px; font-family: \"Geist Variable\", ui-sans-serif, system-ui, sans-serif; color: var(--ink, #121729); font-size: 15px; line-height: 1.5; } .ds-note p { margin: 8px 0 0; } .ds-src { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--ink-3, #636a80); }"
+    },
+    {
+      "name": "Curriculum Map Marks",
+      "kind": "custom",
+      "description": "Shape-encoded status marks with a visible legend.",
+      "html": "<ul class=\"ds-legend\"><li><span class=\"ds-mark\" data-k=\"done\" style=\"color:#17734a\"></span>Completed</li><li><span class=\"ds-mark\" data-k=\"failed\" style=\"color:#b3261e\"></span>Failed</li><li><span class=\"ds-mark\" data-k=\"pending\" style=\"color:#b2440b\"></span>Pending</li><li><span class=\"ds-mark\" data-k=\"blocked\" style=\"color:#8f5300\"></span>Blocked</li><li><span class=\"ds-mark\" data-k=\"open\" style=\"color:#636a80\"></span>Not yet taken</li></ul>",
+      "css": ".ds-legend { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, auto); gap: 6px 12px; font-family: \"Geist Variable\", ui-sans-serif, system-ui, sans-serif; font-size: 12px; color: var(--ink-2, #434a60); } .ds-legend li { display: flex; align-items: center; gap: 8px; } .ds-mark { display: block; width: 11px; height: 11px; border-radius: 2px; border: 1.5px solid currentColor; box-sizing: border-box; } .ds-mark[data-k=done] { background: currentColor; } .ds-mark[data-k=failed] { background: linear-gradient(45deg, transparent 42%, currentColor 42% 58%, transparent 58%), linear-gradient(-45deg, transparent 42%, currentColor 42% 58%, transparent 58%); } .ds-mark[data-k=pending] { background: linear-gradient(to top, currentColor 50%, transparent 50%); } .ds-mark[data-k=blocked] { border-style: dashed; } .ds-mark[data-k=open] { border-color: var(--line-strong, #c5cbd6); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Advising Passbook",
+    "overview": "**Creative North Star: \"The Advising Passbook\"**\n\nThe system is an academic ledger kept on cool paper. Rule-based results are printed as ledger entries: ruled tables, mono tabular figures, double-ruled totals. Human decisions are the only thing rendered as ink, in the form of the dean's seal-blue stamp. AI explanations live apart, as margin notes set off by a single hairline, never inside the ledger. Every result says where it came from (rule, dean, registrar, assistant), and the visual vocabulary keeps those four voices physically distinct.\n\nDensity is operational, not airy: 15px body, 40px controls, tables that fill their panels edge to edge. Containers are one level deep, hairline-edged and flat. The palette is a cool neutral ground with one accent (seal blue, from the Laguna College seal) and a set of status tones that only ever appear inside icon+text tags or map marks. The system explicitly refuses the generic card-and-metric admin dashboard: no KPI tiles, no stacked shadowed cards, no gradient headers.\n\nLight and dark themes are both first-class; dark is a deep blue-black ledger (`#0d1120` paper) with lifted status tones, selected by OS preference or an explicit `data-theme` toggle.",
+    "keyCharacteristics": [
+      "Cool paper ground, white hairline panels, no decorative shadows.",
+      "Ruled ledger tables with mono tabular figures and a double rule above totals.",
+      "One accent, seal blue, used for primary actions, current-term markers, and the dean's stamp.",
+      "Status always carried by icon + text (tags) or shape + fill (map marks), never colour alone.",
+      "Three voices kept apart: printed ledger (rules), stamp (dean), margin note (assistant)."
+    ],
+    "rules": [
+      {
+        "name": "The One Ink Rule",
+        "body": "Seal blue is the only accent. It marks action, the current term, and the dean's decision; it is never used for decoration, data visualisation, or status of a rule result.",
+        "section": "colors"
+      },
+      {
+        "name": "The Paired Tone Rule",
+        "body": "Every status colour exists as a foreground/tint pair and appears only inside a tag (with its icon) or a map mark (with its shape). A status colour on its own, as a bar, dot, or text colour without an icon, is not part of the system.",
+        "section": "colors"
+      },
+      {
+        "name": "The Violet Means Data Rule",
+        "body": "Record violet is reserved for missing or incorrect maintained data. It never signals an academic outcome.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mono Figures Rule",
+        "body": "Every number a user might compare (units, grades, counts, student numbers, totals) and every subject code is set in Geist Mono with tabular figures. Prose numbers in sentences stay in Geist.",
+        "section": "typography"
+      },
+      {
+        "name": "The Uppercase Belongs To The Stamp Rule",
+        "body": "Uppercase tracked lettering is the stamp's voice. Headings, labels, and column headers stay in sentence case.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hairline Not Shadow Rule",
+        "body": "Panels are separated by a 1px `line` border on `surface`; they never cast a shadow. The active nav item is lifted with a 1px ring of `line`, not a drop shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The One Level Rule",
+        "body": "A panel never contains another bordered panel. Inside a panel, structure comes from rules (row borders, header rule, double-ruled totals).",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** set every comparable number and every subject code in Geist Mono with tabular figures.",
+      "**Do** carry status with an icon + text tag or a shape-encoded map mark, using the tone pairs as defined.",
+      "**Do** attach a provenance line wherever a rule result, dean decision, registrar record, or AI explanation could be confused.",
+      "**Do** close totals with the 3px double rule and open semester groups with the 2px ink top rule.",
+      "**Do** keep panels flat: 1px `line` border, 10px corners, `surface` on `paper`.",
+      "**Do** use ink (not seal) for selection states in tabs and filter chips.",
+      "**Do** render a dean decision exactly once: the stamp plus one dated line."
+    ],
+    "donts": [
+      "**Don't** build metric tiles, KPI cards, or a card-and-metric dashboard; the record is a ledger.",
+      "**Don't** put a shadow on a panel, row, or card; the overlay shadow is for sheets and the drawer only.",
+      "**Don't** use seal blue for anything that is not an action, the current term, or a dean decision.",
+      "**Don't** render rule results or AI text as a stamp, or put AI explanations inside a ledger or panel; they are margin notes.",
+      "**Don't** nest bordered panels inside panels.",
+      "**Don't** signal status by colour alone (coloured text, dots, or bars without icon or shape).",
+      "**Don't** use uppercase tracked lettering outside the stamp."
+    ]
+  }
+}

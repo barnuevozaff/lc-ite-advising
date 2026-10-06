@@ -1,0 +1,59 @@
+rules_version = '2';
+
+// Two roles. The dean creates student records (from scanned grade records),
+// student logins, requests and decisions. A student only reads their own record
+// and request. Dean accounts are set up in the console.
+service cloud.firestore {
+  match /databases/{db}/documents {
+    function signedIn() { return request.auth != null; }
+    function self(id) { return signedIn() && request.auth.uid == id; }
+    function dean() {
+      return signedIn()
+        && exists(/databases/$(db)/documents/users/$(request.auth.uid))
+        && get(/databases/$(db)/documents/users/$(request.auth.uid)).data.role == 'dean';
+    }
+    // The student record this login is linked to.
+    function mine(id) {
+      return signedIn()
+        && exists(/databases/$(db)/documents/users/$(request.auth.uid))
+        && get(/databases/$(db)/documents/users/$(request.auth.uid)).data.studentId == id;
+    }
+
+    match /users/{uid} {
+      allow read: if self(uid) || dean();
+      // Only student logins can be created here; dean roles are set in the console.
+      allow create: if dean()
+        && request.resource.data.keys().hasOnly(['role', 'studentId'])
+        && request.resource.data.role == 'student';
+      allow update, delete: if false;
+    }
+
+    match /students/{id} {
+      allow read: if mine(id) || dean();
+      allow create, update: if dean();
+      allow delete: if false;
+    }
+
+    match /requests/{id} {
+      allow read: if mine(id) || dean();
+      allow create, update: if dean();
+      // A new term archives the old requests, then clears them.
+      allow delete: if dean();
+    }
+
+    match /archive/{term} {
+      allow read, write: if dean();
+    }
+
+    match /config/{name} {
+      allow read: if signedIn();
+      allow write: if dean();
+    }
+
+    match /audit/{id} {
+      allow read: if dean();
+      allow create: if dean() && request.resource.data.actorUid == request.auth.uid;
+      allow update, delete: if false;
+    }
+  }
+}
