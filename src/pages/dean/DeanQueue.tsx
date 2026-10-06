@@ -68,7 +68,7 @@ export function DeanQueue() {
   return (
     <Page wide>
       <PageHeader
-        title="Requests"
+        title="Evaluations"
         actions={
           <button className="btn btn-primary" onClick={() => setAdding(true)}>
             <UserPlusIcon size={18} /> Add student
@@ -78,7 +78,7 @@ export function DeanQueue() {
       <AddStudent open={adding} onClose={() => setAdding(false)} onScan={() => setScanning(true)} />
       <ScanGrades open={scanning} onClose={() => setScanning(false)} />
 
-      <div className="-mx-4 flex overflow-x-auto border-b border-line px-4 lg:mx-0 lg:px-0" role="tablist" aria-label="Request state">
+      <div className="-mx-4 flex overflow-x-auto border-b border-line px-4 lg:mx-0 lg:px-0" role="tablist" aria-label="Evaluation state">
         {TABS.map((x, i) => {
           const active = x.id === t.id
           return (
@@ -146,7 +146,7 @@ export function DeanQueue() {
       <div id="queue-panel" role="tabpanel" aria-labelledby={`qtab-${t.id}`}>
       {visible.length === 0 ? (
         <div className="mt-6 border-y border-line py-14 text-center">
-          <p className="text-sm text-ink-2">{filtersActive ? 'No requests match these filters' : t.id === 'decided' ? 'No decisions yet' : 'Nothing waiting'}</p>
+          <p className="text-sm text-ink-2">{filtersActive ? 'No evaluations match these filters' : t.id === 'decided' ? 'No decisions yet' : 'Nothing waiting'}</p>
         </div>
       ) : (
         <>

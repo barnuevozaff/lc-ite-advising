@@ -87,7 +87,7 @@ export function DeanRecord() {
   return (
     <Page wide>
       <Link to="/dean" className="mb-4 inline-flex items-center gap-1.5 text-sm text-ink-2 hover:text-ink">
-        <ArrowLeftIcon size={14} /> Requests
+        <ArrowLeftIcon size={14} /> Evaluations
       </Link>
       <StudentHeading
         ev={ev}

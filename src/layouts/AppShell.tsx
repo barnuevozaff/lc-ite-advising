@@ -42,7 +42,7 @@ function useNav(role: Role): NavItem[] {
       { to: '/student/assistant', label: 'Ask', icon: ChatCircleTextIcon },
     ]
   return [
-    { to: '/dean', label: 'Requests', icon: TrayIcon, end: true },
+    { to: '/dean', label: 'Evaluations', icon: TrayIcon, end: true },
     { to: '/dean/students', label: 'Students', icon: UsersIcon },
     { to: '/dean/curricula', label: 'Curricula', icon: BooksIcon },
     { to: '/dean/activity', label: 'Activity', icon: ClockCounterClockwiseIcon },
@@ -245,7 +245,7 @@ function TermNote() {
             </label>
           </div>
           <ul className="mt-4 space-y-1.5 text-sm text-ink-2">
-            <li>Current requests and decisions for {termLabel(cur)} are archived.</li>
+            <li>Current evaluations and decisions for {termLabel(cur)} are archived.</li>
             <li>Offerings are reset to every {pick.sem === 3 ? 'summer' : pick.sem === 1 ? 'first-semester' : 'second-semester'} subject. Adjust them in Curricula.</li>
             <li>Students are evaluated again after their new grades are scanned.</li>
           </ul>
