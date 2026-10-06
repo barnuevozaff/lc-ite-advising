@@ -1,6 +1,7 @@
-import { ArchiveIcon, CaretRightIcon, FunnelSimpleIcon, MagnifyingGlassIcon, XIcon } from '@phosphor-icons/react'
+import { ArchiveIcon, ArrowCounterClockwiseIcon, CaretRightIcon, FunnelSimpleIcon, MagnifyingGlassIcon, XIcon } from '@phosphor-icons/react'
 import { Fragment, useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
+import { Modal } from '../../components/controls'
 import { ClassificationTag, StatusTag } from '../../components/status'
 import { Page, PageHeader } from '../../layouts/AppShell'
 import { YEAR_LABEL } from '../../domain/term'
@@ -25,9 +26,11 @@ function uniqueSorted<T>(values: T[], compare?: (a: T, b: T) => number) {
 }
 
 export function DeanStudents() {
-  const { state, evaluate } = useStore()
+  const { state, dispatch, evaluate } = useStore()
   const [params, setParams] = useSearchParams()
   const [filtersOpen, setFiltersOpen] = useState(false)
+  const [archiving, setArchiving] = useState<Student | null>(null)
+  const [reason, setReason] = useState('')
 
   const f: Filters = {
     program: params.get('program') ?? '',
@@ -169,11 +172,11 @@ export function DeanStudents() {
             <Link to="/dean/students" className="btn btn-secondary">
               Active students
             </Link>
-          ) : archivedCount > 0 ? (
+          ) : (
             <Link to="/dean/students?archived=1" className="btn btn-ghost">
               <ArchiveIcon size={18} /> Archive <span className="num text-ink-3">{archivedCount}</span>
             </Link>
-          ) : undefined
+          )
         }
       />
 
@@ -216,7 +219,7 @@ export function DeanStudents() {
 
       {rows.length === 0 ? (
         <div className="border-y border-line py-12 text-center">
-          <p className="text-sm text-ink-2">No students match</p>
+          <p className="text-sm text-ink-2">{showArchived && !anyActive ? 'No archived students' : 'No students match'}</p>
           {anyActive && (
             <button className="btn btn-secondary btn-sm mt-3" onClick={() => setParams(new URLSearchParams(showArchived ? 'archived=1' : ''), { replace: true })}>
               Clear filters
@@ -237,8 +240,8 @@ export function DeanStudents() {
                   <th>Curriculum</th>
                   <th>Entry AY</th>
                   <th>Evaluation</th>
-                  <th className="w-8">
-                    <span className="sr-only">Open</span>
+                  <th className="w-24">
+                    <span className="sr-only">Actions</span>
                   </th>
                 </tr>
               </thead>
@@ -272,9 +275,12 @@ export function DeanStudents() {
                         <td className="num text-[0.8125rem]">{r.s.entryAY}</td>
                         <td>{r.ev.classification === 'regular' ? <span className="text-ink-2">Regular</span> : <ClassificationTag value={r.ev.classification} />}</td>
                         <td>
-                          <Link to={`/dean/students/${r.s.id}/profile`} className="text-ink-3 group-hover:text-ink" aria-label={`Open ${r.s.firstName} ${r.s.lastName}`}>
-                            <CaretRightIcon size={16} />
-                          </Link>
+                          <div className="flex items-center justify-end gap-1">
+                            <ArchiveAction s={r.s} onArchive={() => setArchiving(r.s)} />
+                            <Link to={`/dean/students/${r.s.id}/profile`} className="text-ink-3 group-hover:text-ink" aria-label={`Open ${r.s.firstName} ${r.s.lastName}`}>
+                              <CaretRightIcon size={16} />
+                            </Link>
+                          </div>
                         </td>
                       </tr>
                     </Fragment>
@@ -304,8 +310,8 @@ export function DeanStudents() {
                       />
                     </li>
                   )}
-                  <li className="border-b border-line">
-                    <Link to={`/dean/students/${r.s.id}/profile`} className="flex items-center gap-3 px-1 py-3 active:bg-surface-2">
+                  <li className="flex items-center gap-1 border-b border-line">
+                    <Link to={`/dean/students/${r.s.id}/profile`} className="flex min-w-0 flex-1 items-center gap-3 px-1 py-3 active:bg-surface-2">
                       <div className="min-w-0 flex-1">
                         <div className="font-semibold">
                           {r.s.lastName}, {r.s.firstName}
@@ -323,6 +329,7 @@ export function DeanStudents() {
                       </div>
                       <CaretRightIcon size={16} className="shrink-0 text-ink-3" aria-hidden />
                     </Link>
+                    <ArchiveAction s={r.s} onArchive={() => setArchiving(r.s)} />
                   </li>
                 </Fragment>
               )
@@ -330,7 +337,51 @@ export function DeanStudents() {
           </ul>
         </>
       )}
+
+      <Modal
+        open={!!archiving}
+        onClose={() => setArchiving(null)}
+        title={<h2 className="text-lg font-semibold">Archive {archiving?.firstName} {archiving?.lastName}</h2>}
+        footer={
+          <>
+            <button className="btn btn-ghost" onClick={() => setArchiving(null)}>
+              Cancel
+            </button>
+            <button
+              className="btn btn-primary"
+              disabled={!reason.trim()}
+              onClick={() => {
+                if (archiving) dispatch({ type: 'archiveStudent', studentId: archiving.id, reason })
+                setArchiving(null)
+                setReason('')
+              }}
+            >
+              Archive
+            </button>
+          </>
+        }
+      >
+        <label className="block">
+          <span className="field-label">Reason</span>
+          <textarea className="input" rows={3} value={reason} onChange={(e) => setReason(e.target.value)} data-autofocus placeholder="e.g. Graduated, transferred, or stopped schooling" />
+        </label>
+        <p className="mt-2 text-xs text-ink-3">Nothing is deleted. The student moves to the Archive and can be restored there.</p>
+      </Modal>
     </Page>
+  )
+}
+
+/** Archive for active students, Restore in the Archive view. */
+function ArchiveAction({ s, onArchive }: { s: Student; onArchive: () => void }) {
+  const { dispatch } = useStore()
+  return s.archived ? (
+    <button className="btn btn-ghost btn-sm h-8 shrink-0" onClick={() => dispatch({ type: 'restoreStudent', studentId: s.id })}>
+      <ArrowCounterClockwiseIcon size={15} /> Restore
+    </button>
+  ) : (
+    <button className="btn btn-ghost h-8 w-8 shrink-0 p-0 text-ink-3 hover:text-ink" onClick={onArchive} aria-label={`Archive ${s.firstName} ${s.lastName}`} title="Archive">
+      <ArchiveIcon size={16} />
+    </button>
   )
 }
 
