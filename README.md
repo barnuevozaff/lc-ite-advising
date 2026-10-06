@@ -19,7 +19,8 @@ Data stays in that browser. Use the reset button beside "Sign out" to restore th
 
 ```bash
 npm install
-npm run dev          # app (live mode when .env.local has the Firebase config)
+npm run dev          # offline demo (same as dev:demo)
+npm run dev:live     # live mode with Firebase (needs .env.local)
 npm test             # domain, parser and sync tests
 npm run test:rules   # Firestore security rules on the emulator (needs Java)
 ```
