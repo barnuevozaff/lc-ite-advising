@@ -138,7 +138,7 @@ function UserBlock({ compact }: { compact?: boolean }) {
           <div className="truncate text-sm font-semibold">{s.name}</div>
           <div className="truncate text-xs text-ink-3">
             {ROLE_LABEL[s.role]}
-            {state.mode === 'demo' ? ' · Demo' : ''}
+            {state.mode === 'demo' ? <span data-demo-only> · Demo</span> : ''}
           </div>
         </div>
       </div>
@@ -166,6 +166,7 @@ function UserBlock({ compact }: { compact?: boolean }) {
             }}
             aria-label="Reset demo data"
             title="Reset demo data"
+            data-demo-only
           >
             <ArrowCounterClockwiseIcon size={16} />
           </button>

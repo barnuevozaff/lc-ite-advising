@@ -243,7 +243,7 @@ export function seedAdvising(students: Student[]): Record<string, AdvisingRecord
         kind: 'approved',
         at: at('2026-10-02T10:41:00+08:00'),
         subjectIds: ids(BSCS_2018, ['FL 111', 'ITE P306', 'ITE P402', 'ITE P403', 'GE 109']),
-        remarks: 'Retake ITE P306 (UW) and FL 111 (DRP). ITE P405 moves to the next term to keep the normal load of 15 units. FL 112 follows once FL 111 is passed.',
+        remarks: 'Retake ITE P306 and FL 111. Take ITE P405 next sem.',
       },
     },
   }

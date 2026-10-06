@@ -89,7 +89,7 @@ export function AddStudent({ open, onClose, onScan }: { open: boolean; onClose: 
         }
       >
         <p className="text-sm text-ink-2">Give these to the student. The password is shown only once.</p>
-        {!live && <p className="mt-1 text-xs text-ink-3">Demo: sample credentials only. No account is created.</p>}
+        {!live && <p data-demo-only className="mt-1 text-xs text-ink-3">Demo: sample credentials only. No account is created.</p>}
         <dl className="mt-4 space-y-3 rounded-lg bg-sunken p-4">
           <div>
             <dt className="text-xs text-ink-3">Email</dt>

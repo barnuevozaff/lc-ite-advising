@@ -123,7 +123,7 @@ export function SignIn() {
 
           {/* Demo accounts exist only when Firebase is not configured. */}
           {!liveAvailable && (
-          <details className="group mt-8">
+          <details data-demo-only className="group mt-8">
             <summary className="flex cursor-pointer list-none items-center justify-between text-sm text-ink-3 hover:text-ink-2 [&::-webkit-details-marker]:hidden">
               Demo accounts
               <CaretDownIcon size={14} className="transition-transform duration-200 group-open:rotate-180" aria-hidden />

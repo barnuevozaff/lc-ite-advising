@@ -149,13 +149,14 @@ export function DeanStudents() {
         onChange={(v) => update({ year: v })}
         options={[{ value: '', label: 'All year levels' }, ...years.map((y) => ({ value: y, label: yearName(y) }))]}
       />
-      <Select
-        label="Section"
-        value={f.section}
-        onChange={(v) => update({ section: v })}
-        disabled={sections.length === 0}
-        options={sections.length ? [{ value: '', label: 'All sections' }, ...sections.map((s) => ({ value: s, label: `Section ${s}` }))] : [{ value: '', label: 'No sections recorded' }]}
-      />
+      {sections.length > 0 && (
+        <Select
+          label="Section"
+          value={f.section}
+          onChange={(v) => update({ section: v })}
+          options={[{ value: '', label: 'All sections' }, ...sections.map((s) => ({ value: s, label: `Section ${s}` }))]}
+        />
+      )}
       <label className="inline-flex h-9 items-center gap-2 text-sm whitespace-nowrap text-ink-2">
         <input type="checkbox" checked={f.issues} onChange={(e) => update({ issues: e.target.checked })} className="h-4 w-4 accent-[var(--seal)]" />
         Needs update

@@ -256,7 +256,7 @@ export function ScanGrades({ open, onClose, student }: { open: boolean; onClose:
         {login.password ? (
           <>
             <p className="text-sm text-ink-2">Give these to the student. The password is shown only once.</p>
-            {!live && <p className="mt-1 text-xs text-ink-3">Demo: sample credentials only. No account is created.</p>}
+            {!live && <p data-demo-only className="mt-1 text-xs text-ink-3">Demo: sample credentials only. No account is created.</p>}
             <dl className="mt-4 space-y-3 rounded-lg bg-sunken p-4">
               <div>
                 <dt className="text-xs text-ink-3">Email</dt>
@@ -350,7 +350,7 @@ export function ScanGrades({ open, onClose, student }: { open: boolean; onClose:
             <button className="font-medium text-ink-2 underline-offset-4 hover:text-ink hover:underline" onClick={manual}>
               Enter manually
             </button>
-            <Link to={`/dean/sample-report/${student?.id ?? 'new'}`} target="_blank" className="font-medium text-ink-2 underline-offset-4 hover:text-ink hover:underline">
+            <Link data-demo-only to={`/dean/sample-report/${student?.id ?? 'new'}`} target="_blank" className="font-medium text-ink-2 underline-offset-4 hover:text-ink hover:underline">
               Sample report
             </Link>
           </div>
