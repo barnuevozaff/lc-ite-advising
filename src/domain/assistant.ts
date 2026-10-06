@@ -177,7 +177,7 @@ export function answer(question: string, ev: Evaluation, rec: AdvisingRecord | u
       if (!rec?.requestedAt)
         return {
           kind: 'explanation',
-          paragraphs: ['You haven’t been evaluated for this term yet. Bring your Report of Grades and pre-enrollment form to the dean; your approved subjects appear on the Subject load page after the evaluation.'],
+          paragraphs: ['You haven’t been evaluated for this term yet. Bring your Report of Grades to the dean; your approved subjects appear on the Subject load page after the evaluation.'],
           grounds: [],
         }
       return {

@@ -42,9 +42,15 @@ export function requestContext(ev: Evaluation) {
 
 /* ---------------- Working load ---------------- */
 
-/** A subject can be put in a load when it is eligible and offered, or a failed subject offered for retake. */
+/** A subject can be put in a load when it is eligible and offered, or a failed or dropped subject offered for retake. */
 export function canAddToLoad(x: SubjectEvaluation): boolean {
-  return x.status === 'eligible' || (x.status === 'failed' && !!x.retakeAvailable)
+  return x.status === 'eligible' || ((x.status === 'failed' || x.status === 'notCompleted') && !!x.retakeAvailable)
+}
+
+/** What is being retaken: the failing grade, UW, or DRP. */
+export function retakeOf(x: SubjectEvaluation): string {
+  if (x.status === 'notCompleted') return 'DRP'
+  return x.finalGrade !== undefined ? String(x.finalGrade) : 'UW'
 }
 
 /** Proposed subjects minus the dean's removals, plus the dean's additions, in curriculum order. */
@@ -134,7 +140,7 @@ export function loadSubjectView(ev: Evaluation, working: ReadonlySet<string>, re
         ...base,
         state: 'available',
         addable: true,
-        reason: [x.status === 'failed' ? `Retake · ${x.finalGrade ?? 'UW'}` : '', removed.has(x.subject.id) ? 'Removed from proposal' : ''].filter(Boolean).join(' · '),
+        reason: [x.retakeAvailable ? `Retake · ${retakeOf(x)}` : '', removed.has(x.subject.id) ? 'Removed from proposal' : ''].filter(Boolean).join(' · '),
       }
     else
       switch (x.status) {

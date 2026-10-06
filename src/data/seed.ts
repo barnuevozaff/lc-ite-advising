@@ -217,7 +217,7 @@ export function seedAdvising(students: Student[]): Record<string, AdvisingRecord
     remarks: '',
     caseDecisions: [],
   })
-  // Synthetic load requests for the current term. Bea has not requested yet.
+  // Evaluations the dean has started this term (synthetic). Bea is not yet evaluated.
   const out: Record<string, AdvisingRecord> = {
     's-jerome': blank('s-jerome', '2026-10-01T08:20:00+08:00'),
     's-kristine': blank('s-kristine', '2026-10-01T09:05:00+08:00'),
@@ -230,15 +230,20 @@ export function seedAdvising(students: Student[]): Record<string, AdvisingRecord
     's-joshua': blank('s-joshua', '2026-10-03T07:58:00+08:00'),
     's-liza': {
       ...blank('s-liza', '2026-09-30T15:10:00+08:00', '2026-10-02T09:02:00+08:00'),
-      decision: { kind: 'confirmed', at: at('2026-10-02T09:14:00+08:00'), subjectIds: ids(BSIT_2018, ['ITE P113', 'ITE P114', 'ITE ELEC 3']), remarks: '' },
+      decision: {
+        kind: 'confirmed',
+        at: at('2026-10-02T09:14:00+08:00'),
+        subjectIds: ids(BSIT_2018, ['ITE P113', 'ITE P114', 'ITE ELEC 3', 'ITE ELEC 4', 'ITE P118']),
+        remarks: '',
+      },
     },
     's-dominic': {
       ...blank('s-dominic', '2026-09-30T16:25:00+08:00', '2026-10-02T10:30:00+08:00'),
       decision: {
         kind: 'approved',
         at: at('2026-10-02T10:41:00+08:00'),
-        subjectIds: ids(BSCS_2018, ['ITE P402', 'ITE P405', 'GE 109']),
-        remarks: 'Retake ITE P306 (UW). FL 112 stays blocked until FL 111 is completed.',
+        subjectIds: ids(BSCS_2018, ['FL 111', 'ITE P306', 'ITE P402', 'ITE P403', 'GE 109']),
+        remarks: 'Retake ITE P306 (UW) and FL 111 (DRP). ITE P405 moves to the next term to keep the normal load of 15 units. FL 112 follows once FL 111 is passed.',
       },
     },
   }
@@ -248,9 +253,10 @@ export function seedAdvising(students: Student[]): Record<string, AdvisingRecord
 
 export function seedAudit(): AuditEntry[] {
   return [
+    // Newest first, like the live log.
+    { id: 'a3', at: at('2026-10-02T10:41:00+08:00'), actor: 'Dean, ITE Department', role: 'dean', action: 'Approved subject load, with remarks', studentId: 's-dominic' },
+    { id: 'a2', at: at('2026-10-02T09:14:00+08:00'), actor: 'Dean, ITE Department', role: 'dean', action: 'Confirmed subject load', studentId: 's-liza' },
     { id: 'a1', at: at('2026-10-01T15:20:00+08:00'), actor: 'Dean, ITE Department', role: 'dean', action: 'Updated subject offerings for First Semester, AY 2026–2027' },
-    { id: 'a2', at: at('2026-10-02T09:14:00+08:00'), actor: 'Dean, ITE Department', role: 'dean', action: 'Confirmed prescribed subject load', studentId: 's-liza' },
-    { id: 'a3', at: at('2026-10-02T10:41:00+08:00'), actor: 'Dean, ITE Department', role: 'dean', action: 'Approved subject load with remarks', studentId: 's-dominic' },
   ]
 }
 

@@ -116,7 +116,7 @@ export function SubjectLoadPanel({ ev, rec }: { ev: Evaluation; rec: AdvisingRec
         {status === 'none' ? (
           <div>
             <StatusLine status="none" />
-            <p className="mt-1.5 text-sm text-ink-2">Bring your Report of Grades and pre-enrollment form to the dean for evaluation.</p>
+            <p className="mt-1.5 text-sm text-ink-2">Bring your Report of Grades to the dean for evaluation.</p>
           </div>
         ) : (
           <div>

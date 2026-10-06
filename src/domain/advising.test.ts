@@ -88,10 +88,10 @@ describe('dean load workspace', () => {
     expect(vs[sid(BSIT_2025, 'ITE P104')].reason).toBe('Prerequisite unresolved: INC in ITE C103b')
   })
 
-  it('UW is treated as failed; DRP stays not completed', () => {
+  it('UW is treated as failed; a DRP subject offered this term can be retaken', () => {
     const vs = loadSubjectView(ev('s-dominic'), new Set(), new Set())
     expect(vs[sid(BSCS_2018, 'ITE P306')].reason).toContain('UW')
-    expect(vs[sid(BSCS_2018, 'FL 111')]).toMatchObject({ state: 'notCompleted', addable: false, reason: 'DRP · not completed' })
+    expect(vs[sid(BSCS_2018, 'FL 111')]).toMatchObject({ state: 'available', addable: true, reason: 'Retake · DRP' })
     expect(vs[sid(BSCS_2018, 'FL 112')].reason).toContain('FL 111 dropped')
   })
 

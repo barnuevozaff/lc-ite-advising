@@ -291,7 +291,7 @@ export function reducer(state: AppState, a: Action): AppState {
       }
     case 'allowSubject': {
       const r = rec(state, a.studentId)
-      const reason = a.reason.trim()
+      const reason = a.reason.trim().replace(/\.+$/, '')
       if (r.decision || !reason) return state
       const allowed = [...(r.allowed ?? []).filter((x) => x.subjectId !== a.subjectId), { subjectId: a.subjectId, reason, at: now() }]
       return {
@@ -391,8 +391,9 @@ export function reducer(state: AppState, a: Action): AppState {
       const advising = r.decision || r.requestedAt ? r : { ...r, requestedAt: at, reviewStartedAt: at }
       const n = a.rows.length
       let audit = state.audit
-      if (!existing) audit = [{ id: uid(), at, actor: ACTOR.dean, role: 'dean' as const, action: 'Created student record from a scanned grade record', studentId: id }, ...audit]
-      audit = [{ id: uid(), at, actor: ACTOR.dean, role: 'dean' as const, action: `Encoded ${n} grade${n === 1 ? '' : 's'} from a scanned record`, studentId: id }, ...audit]
+      if (!existing)
+        audit = [{ id: uid(), at, actor: ACTOR.dean, role: 'dean' as const, action: n ? 'Created student record from a scanned grade record' : 'Added the student record', studentId: id }, ...audit]
+      if (n) audit = [{ id: uid(), at, actor: ACTOR.dean, role: 'dean' as const, action: `Encoded ${n} grade${n === 1 ? '' : 's'} from a scanned record`, studentId: id }, ...audit]
       return {
         ...state,
         students: existing ? state.students.map((x) => (x.id === id ? student : x)) : [...state.students, student],

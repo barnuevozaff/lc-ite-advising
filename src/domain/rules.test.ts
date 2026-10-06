@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { BSCS_2025, BSIT_2018, BSIT_2025 } from '../data/curricula'
-import { seedOfferings, seedStudents } from '../data/seed'
+import { BSCS_2018, BSCS_2025, BSIT_2018, BSIT_2025 } from '../data/curricula'
+import { seedAdvising, seedOfferings, seedStudents } from '../data/seed'
+import { canAddToLoad } from './advising'
 import { evaluateStudent, resultText } from './rules'
 import { curriculumVersionForEntryAY } from './term'
 
@@ -14,6 +15,24 @@ describe('rule-based evaluation scenarios', () => {
   it('assigns the curriculum version from the entry academic year', () => {
     expect(curriculumVersionForEntryAY('2024–2025')).toBe('2018–2019')
     expect(curriculumVersionForEntryAY('2025–2026')).toBe('2025–2026')
+  })
+
+  it('a dropped (DRP) subject offered this term can be retaken and is recommended first', () => {
+    const e = ev('s-dominic')
+    const fl111 = e.subjects[sid(BSCS_2018, 'FL 111')]
+    expect(fl111.status).toBe('notCompleted')
+    expect(fl111.retakeAvailable).toBe(true)
+    expect(canAddToLoad(fl111)).toBe(true)
+    expect(e.load.kind === 'recommended' && e.load.lines.find((l) => l.subjectId === fl111.subject.id)?.basis).toBe('retake')
+  })
+
+  it('demo decisions match the rule-based load', () => {
+    const adv = seedAdvising(seedStudents())
+    for (const id of ['s-liza', 's-dominic']) {
+      const e = ev(id)
+      const proposed = e.load.kind === 'none' ? [] : e.load.lines.map((l) => l.subjectId)
+      expect([...adv[id].decision!.subjectIds].sort(), id).toEqual([...proposed].sort())
+    }
   })
 
   it('regular student gets the prescribed load', () => {

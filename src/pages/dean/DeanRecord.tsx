@@ -30,7 +30,7 @@ import { Stamp, formatDate, formatDateTime } from '../../components/provenance'
 import { AdvisingStateTag, StatusTag } from '../../components/status'
 import { StudentHeading, useLatched } from '../../components/student-bits'
 import { Page } from '../../layouts/AppShell'
-import { composeLoad, decidedSubjects, isProposed, loadSubjectView, validateLoad, type LoadSubjectState, type LoadSubjectView } from '../../domain/advising'
+import { composeLoad, decidedSubjects, isProposed, loadSubjectView, retakeOf, validateLoad, type LoadSubjectState, type LoadSubjectView } from '../../domain/advising'
 import { groupByTerm } from '../../domain/curriculumAdmin'
 import { LOAD_BASIS_LABEL, advisingState, deanReviewItems, unitsOf } from '../../domain/rules'
 import { CURRENT_TERM, SEM_LABEL, YEAR_LABEL, termLabel } from '../../domain/term'
@@ -369,7 +369,7 @@ function LoadPanel({
             const basis = basisOf(sid)
             const meta = [
               added.has(sid) ? 'Added' : '',
-              basis === 'retake' ? `Retake · previous grade ${x.finalGrade}` : basis && basis !== 'current' && basis !== 'prescribed' ? LOAD_BASIS_LABEL[basis] : '',
+              basis === 'retake' ? `Retake · previous ${retakeOf(x)}` : basis && basis !== 'current' && basis !== 'prescribed' ? LOAD_BASIS_LABEL[basis] : '',
             ].filter(Boolean)
             const issue = issues.find((i) => i.subjectId === sid)
             return (

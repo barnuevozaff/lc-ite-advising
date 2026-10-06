@@ -328,14 +328,21 @@ export function evaluateStudent(
           reason: 'Not completed. Does not satisfy a prerequisite.',
         }
         break
-      case 'notCompleted':
+      case 'notCompleted': {
+        // A dropped subject is taken again like a retake when it is offered and its prerequisites are met.
+        const canRetake = unmet.length === 0 && unknown.length === 0
         ev = {
           ...base,
           status: 'notCompleted',
           flag: deps.length ? 'needsAttention' : undefined,
-          reason: 'Dropped (DRP). Does not satisfy a prerequisite.',
+          retakeAvailable: canRetake && offered,
+          note: canRetake && offered ? 'Offered for retake' : undefined,
+          reason: `Dropped (DRP). Does not satisfy a prerequisite. ${
+            canRetake && offered ? 'Offered for retake this semester.' : canRetake ? 'Not offered for retake this semester.' : ''
+          }`.trim(),
         }
         break
+      }
       case 'deanReview': {
         const r = rs.latest?.result
         ev = {
@@ -433,9 +440,9 @@ export function evaluateStudent(
   } else if (classification === 'irregular') {
     const position = standing !== null ? standing * 10 + CURRENT_TERM.sem : null
     const lines: LoadLine[] = subjects
-      .filter((s) => results[s.id].status === 'eligible' || (results[s.id].status === 'failed' && results[s.id].retakeAvailable))
+      .filter((s) => results[s.id].status === 'eligible' || results[s.id].retakeAvailable)
       .map((s): LoadLine => {
-        if (results[s.id].status === 'failed') return { subjectId: s.id, basis: 'retake' }
+        if (results[s.id].retakeAvailable) return { subjectId: s.id, basis: 'retake' }
         if (position === null) return { subjectId: s.id, basis: 'unplaced' }
         const p = s.year * 10 + s.semester
         if (standing !== null && s.year > standing) return { subjectId: s.id, basis: 'higherYear' }
